@@ -5,9 +5,10 @@
 
 import pymongo, os
 from config import DB_URI, DB_NAME
+from pymongo.server_api import ServerApi
 
 
-dbclient = pymongo.MongoClient(DB_URI)
+dbclient = pymongo.MongoClient(DB_URI,server_api=ServerApi('1'))
 database = dbclient[DB_NAME]
 
 
